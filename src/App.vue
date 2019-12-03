@@ -1,37 +1,23 @@
 <template>
-  <v-app id="app">
-    <div>
-      <img alt="Vue logo" src="./assets/logo.png" />
-      <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
-      <heavy-dialog />
-      <light-dialog />
-    </div>
+  <v-app>
+    <v-container text-xs-center>
+      <v-layout wrap>
+        <v-flex xs12><h1>vue-devtools-performance-handson</h1></v-flex>
+
+        <v-flex xs12><heavy-dialog /></v-flex>
+
+        <v-flex xs12><light-dialog /></v-flex>
+      </v-layout>
+    </v-container>
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
 import HeavyDialog from "./components/HeavyDialog.vue";
 import LightDialog from "./components/LightDialog.vue";
 
 export default Vue.extend({
-  name: "app",
-  components: {
-    HelloWorld,
-    HeavyDialog,
-    LightDialog
-  }
+  components: { HeavyDialog, LightDialog }
 });
 </script>
-
-<style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
