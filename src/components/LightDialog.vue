@@ -50,7 +50,7 @@ export default Vue.extend({
 
   computed: {
     items(): { value: string; help: string }[] {
-      return new Array(100).fill(null).map((_, i) => ({
+      return new Array(300).fill(null).map((_, i) => ({
         value: `foo${i}`,
         help: `This is help for foo${i}`
       }));
