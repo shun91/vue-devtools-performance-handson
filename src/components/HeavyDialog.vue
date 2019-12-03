@@ -15,6 +15,7 @@
             <v-list-tile
               v-for="{ value } in items"
               :key="value"
+              ripple
               @click="selected = value"
               @mouseenter="updateOnmoused(value)"
               @mouseleave="updateOnmoused('')"
