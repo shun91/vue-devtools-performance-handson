@@ -4,6 +4,7 @@
       <img alt="Vue logo" src="./assets/logo.png" />
       <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
       <heavy-dialog />
+      <light-dialog />
     </div>
   </v-app>
 </template>
@@ -12,12 +13,14 @@
 import Vue from "vue";
 import HelloWorld from "./components/HelloWorld.vue";
 import HeavyDialog from "./components/HeavyDialog.vue";
+import LightDialog from "./components/LightDialog.vue";
 
 export default Vue.extend({
   name: "app",
   components: {
     HelloWorld,
-    HeavyDialog
+    HeavyDialog,
+    LightDialog
   }
 });
 </script>

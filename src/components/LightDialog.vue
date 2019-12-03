@@ -1,7 +1,7 @@
 <template>
   <v-dialog v-model="dialog" scrollable max-width="300px">
     <template #activator="{ on }">
-      <v-btn v-on="on" dark>open heavy dialog</v-btn>
+      <v-btn v-on="on">open light dialog</v-btn>
     </template>
 
     <v-card>
@@ -12,22 +12,14 @@
       <v-card-text class="pa-0" style="height: 300px;">
         <v-radio-group v-model="selected">
           <v-list class="pa-0">
-            <v-list-tile
-              v-for="{ value } in items"
-              :key="value"
-              ripple
-              @click="selected = value"
-              @mouseenter="updateOnmoused(value)"
+            <the-list-item
+              v-for="item in items"
+              :key="item.value"
+              :item="item"
+              @click="selected = item.value"
+              @mouseenter="updateOnmoused(item.value)"
               @mouseleave="updateOnmoused('')"
-            >
-              <v-list-tile-action>
-                <v-radio :value="value" />
-              </v-list-tile-action>
-
-              <v-list-tile-content>
-                <v-list-tile-title>{{ value }}</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
+            />
           </v-list>
         </v-radio-group>
       </v-card-text>
@@ -45,8 +37,11 @@
 
 <script lang="ts">
 import Vue from "vue";
+import TheListItem from "./TheListItem.vue";
 
 export default Vue.extend({
+  components: { TheListItem },
+
   data: () => ({
     dialog: false,
     selected: "",
